@@ -37,19 +37,24 @@ export type PredefinedColors = 'primary' | 'secondary' | 'tertiary' | 'success' 
 export type Color = PredefinedColors | string;
 export type Mode = 'ios' | 'md';
 export type ComponentTags = keyof StencilIntrinsicElements;
-export type ComponentRef = Function | HTMLElement | string;
+export type ComponentRef = Function | HTMLElement | string | null;
 export type ComponentProps<T = null> = T extends ComponentTags ? StencilIntrinsicElements[T] : {[key: string]: any};
 export type CssClassMap = { [className: string]: boolean };
 export type BackButtonEvent = CustomEvent<{
   register(priority: number, handler: () => Promise<any> | void): void;
 }>
 
+export interface FrameworkDelegate {
+  attachViewToDom(container: any, component: any, propsOrDataObj?: any, cssClasses?: string[]): Promise<HTMLElement>;
+  removeViewFromDom(container: any, component: any): Promise<void>;
+}
+
 declare global {
   interface StencilGlobalHTMLAttributes {
     // for ion-menu and ion-split-pane
     main?: boolean;
     tappable?: boolean;
-    'ion-activable'?: boolean;
+    'ion-activatable'?: boolean;
 
     padding?: boolean;
     ['padding-top']?: boolean;

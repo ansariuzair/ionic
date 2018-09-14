@@ -2,7 +2,7 @@ import { Component, Element, Event, EventEmitter, Prop, State } from '@stencil/c
 
 import { Color, CssClassMap, Mode, RouterDirection } from '../../interface';
 import { hasShadowDom } from '../../utils/helpers';
-import { openURL } from '../../utils/theme';
+import { createColorClasses, openURL } from '../../utils/theme';
 
 @Component({
   tag: 'ion-button',
@@ -149,16 +149,17 @@ export class Button {
     const { buttonType, color, expand, fill, mode, shape, size, strong } = this;
 
     return {
+      'ion-activatable': true,
       class: {
+        ...createColorClasses(color),
         ...getButtonClassMap(buttonType, mode),
         ...getButtonTypeClassMap(buttonType, expand, mode),
         ...getButtonTypeClassMap(buttonType, size, mode),
         ...getButtonTypeClassMap(buttonType, shape, mode),
         ...getButtonTypeClassMap(buttonType, strong ? 'strong' : undefined, mode),
-        ...getColorClassMap(buttonType, color, fill, mode),
+        ...getButtonTypeClassMap(buttonType, fill, mode),
         'focused': this.keyFocus,
-      },
-      'ion-activable': true,
+      }
     };
   }
 
@@ -185,7 +186,7 @@ export class Button {
           <slot></slot>
           <slot name="end"></slot>
         </span>
-        {this.mode === 'md' && <ion-ripple-effect />}
+        {this.mode === 'md' && <ion-ripple-effect></ion-ripple-effect>}
       </TagType>
     );
   }
@@ -217,22 +218,4 @@ function getButtonTypeClassMap(buttonType: string, type: string | undefined, mod
     [`${buttonType}-${type}`]: true,
     [`${buttonType}-${type}-${mode}`]: true
   };
-}
-
-function getColorClassMap(buttonType: string, color: string | undefined, fill: string | undefined, mode: Mode): CssClassMap {
-  let className = buttonType;
-
-  if (fill !== undefined) {
-    className += `-${fill.toLowerCase()}`;
-  }
-
-  const map: CssClassMap = {
-    [className]: true,
-    [`${className}-${mode}`]: true,
-  };
-  if (color !== undefined) {
-    map[`ion-color`] = true;
-    map[`ion-color-${color}`] = true;
-  }
-  return map;
 }

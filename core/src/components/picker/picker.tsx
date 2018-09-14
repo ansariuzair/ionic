@@ -127,9 +127,9 @@ export class Picker implements OverlayInterface {
   protected onBackdropTap() {
     const cancelBtn = this.buttons.find(b => b.role === 'cancel');
     if (cancelBtn) {
-      return this.buttonClick(cancelBtn);
+      this.buttonClick(cancelBtn);
     } else {
-      return this.dismiss();
+      this.dismiss();
     }
   }
 
@@ -170,9 +170,7 @@ export class Picker implements OverlayInterface {
   }
 
   /**
-   * Returns a promise that resolves when the picker did dismiss. It also accepts a callback
-   * that is called in the same circustances.
-   *
+   * Returns a promise that resolves when the picker did dismiss.
    */
   @Method()
   onDidDismiss(): Promise<OverlayEventDetail> {
@@ -180,9 +178,7 @@ export class Picker implements OverlayInterface {
   }
 
   /**
-   * Returns a promise that resolves when the picker will dismiss. It also accepts a callback
-   * that is called in the same circumstances.
-   *
+   * Returns a promise that resolves when the picker will dismiss.
    */
   @Method()
   onWillDismiss(): Promise<OverlayEventDetail> {
@@ -261,7 +257,7 @@ export class Picker implements OverlayInterface {
             <div class={buttonWrapperClass(b)}>
               <button
                 type="button"
-                ion-activable
+                ion-activatable
                 onClick={() => this.buttonClick(b)}
                 class={buttonClass(b)}
               >

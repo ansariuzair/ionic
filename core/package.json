@@ -1,6 +1,6 @@
 {
   "name": "@ionic/core",
-  "version": "4.0.0-beta.7",
+  "version": "4.0.0-beta.8",
   "description": "Base components for Ionic",
   "keywords": [
     "ionic",
@@ -14,24 +14,27 @@
     "progressive web app",
     "pwa"
   ],
-  "module": "dist/collection/index.js",
   "main": "dist/index.js",
+  "module": "dist/esm/es5/index.js",
   "types": "dist/types/interface.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "unpkg": "dist/ionic.js",
   "files": [
     "dist/",
-    "css/"
+    "css/",
+    "loader/"
   ],
   "dependencies": {
     "ionicons": "4.4.3"
   },
   "devDependencies": {
-    "@stencil/core": "0.13.0-3",
+    "@stencil/core": "0.13.0-9",
     "@stencil/dev-server": "latest",
     "@stencil/sass": "0.1.0",
     "@stencil/utils": "latest",
     "@types/jest": "^23.3.1",
+    "@types/swiper": "4.2.1",
+    "agadoo": "^1.0.0",
     "autoprefixer": "^9.0.2",
     "chromedriver": "^2.38.3",
     "clean-css-cli": "^4.1.11",
@@ -42,8 +45,9 @@
     "selenium-webdriver": "^3.6.0",
     "stylelint": "^9.4.0",
     "stylelint-order": "^0.8.1",
+    "swiper": "4.3.5",
     "tslint": "^5.10.0",
-    "tslint-ionic-rules": "0.0.18",
+    "tslint-ionic-rules": "0.0.19",
     "tslint-react": "^3.6.0",
     "typescript": "^2.9.2",
     "yargs": "^12.0.1"
@@ -77,8 +81,9 @@
     "theme-builder:dev": "sd concurrent \"npm run theme-app-build -- --watch\" \"stencil build --dev --watch\" \"stencil-dev-server\" \"npm run theme-server\" ",
     "theme-server": "node scripts/theme-builder/server.js",
     "tsc": "./node_modules/.bin/tsc -p .",
-    "validate": "npm run lint && npm run test && npm run build",
-    "validate.ci": "npm run lint && npm run test && npm run build --max-workers 1 --debug"
+    "test.treeshake": "agadoo dist/collection/index.js",
+    "validate": "npm run lint && npm run test && npm run build && npm run test.treeshake",
+    "validate.ci": "npm run lint && npm run test && npm run build --max-workers 1 --debug && npm run test.treeshake"
   },
   "author": "Ionic Team",
   "license": "MIT",

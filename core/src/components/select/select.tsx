@@ -314,7 +314,6 @@ export class Select {
             disabled: o.disabled,
             handler: () => {
               this.value = o.value;
-              // tslint:disable-next-line:no-floating-promises
               this.close();
             }
           } as SelectPopoverOption;
@@ -458,7 +457,7 @@ export class Select {
   hostData() {
     return {
       class: {
-        'in-item': hostContext('.item', this.el),
+        'in-item': hostContext('ion-item', this.el),
         'select-disabled': this.disabled,
         'select-key': this.keyFocus
       }
@@ -471,7 +470,7 @@ export class Select {
     let addPlaceholderClass = false;
 
     let selectText = this.selectedText || this.text;
-    if (selectText === undefined && this.placeholder) {
+    if (selectText === undefined && this.placeholder !== undefined) {
       selectText = this.placeholder;
       addPlaceholderClass = true;
     }
@@ -506,7 +505,7 @@ export class Select {
         class="select-cover"
       >
         <slot></slot>
-        {this.mode === 'md' && <ion-ripple-effect />}
+        {this.mode === 'md' && <ion-ripple-effect></ion-ripple-effect>}
       </button>
     ];
   }

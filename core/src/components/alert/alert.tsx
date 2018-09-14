@@ -181,7 +181,7 @@ export class Alert implements OverlayInterface {
 
   @Listen('ionBackdropTap')
   protected onBackdropTap() {
-    return this.dismiss(null, BACKDROP);
+    this.dismiss(undefined, BACKDROP);
   }
 
   @Listen('ionAlertWillDismiss')
@@ -210,8 +210,7 @@ export class Alert implements OverlayInterface {
   }
 
   /**
-   * Returns a promise that resolves when the alert did dismiss. It also accepts a callback
-   * that is called in the same circumstances.
+   * Returns a promise that resolves when the alert did dismiss.
    *
    */
   @Method()
@@ -220,8 +219,7 @@ export class Alert implements OverlayInterface {
   }
 
   /**
-   * Returns a promise that resolves when the alert will dismiss. It also accepts a callback
-   * that is called in the same circumstances.
+   * Returns a promise that resolves when the alert will dismiss.
    *
    */
   @Method()
@@ -339,7 +337,7 @@ export class Alert implements OverlayInterface {
                 {i.label}
               </div>
             </div>
-            {this.mode === 'md' && <ion-ripple-effect />}
+            {this.mode === 'md' && <ion-ripple-effect></ion-ripple-effect>}
           </button>
         ))}
       </div>
@@ -370,7 +368,7 @@ export class Alert implements OverlayInterface {
                 {i.label}
               </div>
             </div>
-            {this.mode === 'md' && <ion-ripple-effect />}
+            {this.mode === 'md' && <ion-ripple-effect></ion-ripple-effect>}
           </button>
         ))}
       </div>
@@ -426,7 +424,7 @@ export class Alert implements OverlayInterface {
     return (
       <div class={alertButtonGroupClass}>
         {buttons.map(button =>
-          <button type="button" ion-activable class={buttonClass(button)} tabIndex={0} onClick={() => this.buttonClick(button)}>
+          <button type="button" ion-activatable class={buttonClass(button)} tabIndex={0} onClick={() => this.buttonClick(button)}>
             <span class="alert-button-inner">
               {button.text}
             </span>

@@ -31,8 +31,8 @@
   flex: 1;
 
   /* stylelint-disable */
-  padding: 0 !important;
   margin: 0 !important;
+  padding: 0 !important;
   /* stylelint-enable */
 
   background: var(--background);
@@ -95,4 +95,11 @@
 
 .overscroll::after {
   top: -1px;
+}
+
+:host(.content-sizing) {
+  contain: none;
+}
+:host(.content-sizing) .inner-scroll {
+  position: relative;
 }

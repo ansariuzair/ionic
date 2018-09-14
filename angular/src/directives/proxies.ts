@@ -213,7 +213,7 @@ export class Content {
 }
 
 export declare interface Datetime extends StencilComponents<'IonDatetime'> {}
-@Component({ selector: 'ion-datetime', changeDetection: ChangeDetectionStrategy.OnPush, encapsulation: ViewEncapsulation.None, template: '<ng-content></ng-content>', inputs: ['disabled', 'min', 'max', 'displayFormat', 'pickerFormat', 'cancelText', 'doneText', 'yearValues', 'monthValues', 'dayValues', 'hourValues', 'minuteValues', 'monthNames', 'monthShortNames', 'dayNames', 'dayShortNames', 'pickerOptions', 'placeholder', 'value'] })
+@Component({ selector: 'ion-datetime', changeDetection: ChangeDetectionStrategy.OnPush, encapsulation: ViewEncapsulation.None, template: '<ng-content></ng-content>', inputs: ['mode', 'disabled', 'min', 'max', 'displayFormat', 'pickerFormat', 'cancelText', 'doneText', 'yearValues', 'monthValues', 'dayValues', 'hourValues', 'minuteValues', 'monthNames', 'monthShortNames', 'dayNames', 'dayShortNames', 'pickerOptions', 'placeholder', 'value'] })
 export class Datetime {
   ionCancel: EventEmitter<CustomEvent>;
   ionChange: EventEmitter<CustomEvent>;
@@ -222,7 +222,7 @@ export class Datetime {
   constructor(r: ElementRef) {
     const el = r.nativeElement;
     proxyMethods(this, el, ['open']);
-    proxyInputs(this, el, ['disabled', 'min', 'max', 'displayFormat', 'pickerFormat', 'cancelText', 'doneText', 'yearValues', 'monthValues', 'dayValues', 'hourValues', 'minuteValues', 'monthNames', 'monthShortNames', 'dayNames', 'dayShortNames', 'pickerOptions', 'placeholder', 'value']);
+    proxyInputs(this, el, ['mode', 'disabled', 'min', 'max', 'displayFormat', 'pickerFormat', 'cancelText', 'doneText', 'yearValues', 'monthValues', 'dayValues', 'hourValues', 'minuteValues', 'monthNames', 'monthShortNames', 'dayNames', 'dayShortNames', 'pickerOptions', 'placeholder', 'value']);
     proxyOutputs(this, el, ['ionCancel', 'ionChange', 'ionStyle']);
   }
 }
@@ -239,12 +239,12 @@ export class Fab {
 }
 
 export declare interface FabButton extends StencilComponents<'IonFabButton'> {}
-@Component({ selector: 'ion-fab-button', changeDetection: ChangeDetectionStrategy.OnPush, encapsulation: ViewEncapsulation.None, template: '<ng-content></ng-content>', inputs: ['color', 'mode', 'activated', 'disabled', 'href', 'translucent', 'show'] })
+@Component({ selector: 'ion-fab-button', changeDetection: ChangeDetectionStrategy.OnPush, encapsulation: ViewEncapsulation.None, template: '<ng-content></ng-content>', inputs: ['mode', 'color', 'activated', 'disabled', 'routerDirection', 'href', 'translucent', 'show'] })
 export class FabButton {
 
   constructor(r: ElementRef) {
     const el = r.nativeElement;
-    proxyInputs(this, el, ['color', 'mode', 'activated', 'disabled', 'href', 'translucent', 'show']);
+    proxyInputs(this, el, ['mode', 'color', 'activated', 'disabled', 'routerDirection', 'href', 'translucent', 'show']);
   }
 }
 
@@ -447,12 +447,12 @@ export class List {
 }
 
 export declare interface ListHeader extends StencilComponents<'IonListHeader'> {}
-@Component({ selector: 'ion-list-header', changeDetection: ChangeDetectionStrategy.OnPush, encapsulation: ViewEncapsulation.None, template: '<ng-content></ng-content>', inputs: ['color', 'mode'] })
+@Component({ selector: 'ion-list-header', changeDetection: ChangeDetectionStrategy.OnPush, encapsulation: ViewEncapsulation.None, template: '<ng-content></ng-content>', inputs: ['mode', 'color'] })
 export class ListHeader {
 
   constructor(r: ElementRef) {
     const el = r.nativeElement;
-    proxyInputs(this, el, ['color', 'mode']);
+    proxyInputs(this, el, ['mode', 'color']);
   }
 }
 
@@ -747,10 +747,16 @@ export class SkeletonText {
 export declare interface Slide extends StencilComponents<'IonSlide'> {}
 @Component({ selector: 'ion-slide', changeDetection: ChangeDetectionStrategy.OnPush, encapsulation: ViewEncapsulation.None, template: '<ng-content></ng-content>' })
 export class Slide {
+  ionSlideChanged: EventEmitter<CustomEvent>;
+
+  constructor(r: ElementRef) {
+    const el = r.nativeElement;
+    proxyOutputs(this, el, ['ionSlideChanged']);
+  }
 }
 
 export declare interface Slides extends StencilComponents<'IonSlides'> {}
-@Component({ selector: 'ion-slides', changeDetection: ChangeDetectionStrategy.OnPush, encapsulation: ViewEncapsulation.None, template: '<ng-content></ng-content>', inputs: ['options', 'pager', 'scrollbar'] })
+@Component({ selector: 'ion-slides', changeDetection: ChangeDetectionStrategy.OnPush, encapsulation: ViewEncapsulation.None, template: '<ng-content></ng-content>', inputs: ['mode', 'options', 'pager', 'scrollbar'] })
 export class Slides {
   ionSlidesDidLoad: EventEmitter<CustomEvent>;
   ionSlideTap: EventEmitter<CustomEvent>;
@@ -772,7 +778,7 @@ export class Slides {
   constructor(r: ElementRef) {
     const el = r.nativeElement;
     proxyMethods(this, el, ['update', 'slideTo', 'slideNext', 'slidePrev', 'getActiveIndex', 'getPreviousIndex', 'length', 'isEnd', 'isBeginning', 'startAutoplay', 'stopAutoplay', 'lockSwipeToNext', 'lockSwipeToPrev', 'lockSwipes']);
-    proxyInputs(this, el, ['options', 'pager', 'scrollbar']);
+    proxyInputs(this, el, ['mode', 'options', 'pager', 'scrollbar']);
     proxyOutputs(this, el, ['ionSlidesDidLoad', 'ionSlideTap', 'ionSlideDoubleTap', 'ionSlideWillChange', 'ionSlideDidChange', 'ionSlideNextStart', 'ionSlidePrevStart', 'ionSlideNextEnd', 'ionSlidePrevEnd', 'ionSlideTransitionStart', 'ionSlideTransitionEnd', 'ionSlideDrag', 'ionSlideReachStart', 'ionSlideReachEnd', 'ionSlideTouchStart', 'ionSlideTouchEnd']);
   }
 }

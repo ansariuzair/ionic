@@ -64,7 +64,6 @@ function jsSetFocus(
   inputEl.focus();
 
   // scroll the input into place
-  // tslint:disable-next-line:no-floating-promises
   contentEl.scrollByPoint(0, scrollData.scrollAmount, scrollData.scrollDuration).then(() => {
     // the scroll view is in the correct position now
     // give the native text input focus
@@ -75,7 +74,7 @@ function jsSetFocus(
   });
 }
 
-function hasPointerMoved(threshold: number, startCoord: PointerCoordinates, endCoord: PointerCoordinates) {
+function hasPointerMoved(threshold: number, startCoord: PointerCoordinates | undefined, endCoord: PointerCoordinates | undefined) {
   if (startCoord && endCoord) {
     const deltaX = (startCoord.x - endCoord.x);
     const deltaY = (startCoord.y - endCoord.y);

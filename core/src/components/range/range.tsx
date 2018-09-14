@@ -68,11 +68,23 @@ export class Range {
    * Minimum integer value of the range. Defaults to `0`.
    */
   @Prop() min = 0;
+  @Watch('min')
+  protected minChanged() {
+    if (!this.noUpdate) {
+      this.updateRatio();
+    }
+  }
 
   /**
    * Maximum integer value of the range. Defaults to `100`.
    */
   @Prop() max = 100;
+  @Watch('max')
+  protected maxChanged() {
+    if (!this.noUpdate) {
+      this.updateRatio();
+    }
+  }
 
   /**
    * If true, a pin with integer value is shown when the knob
@@ -330,7 +342,7 @@ export class Range {
     return {
       class: {
         ...createColorClasses(this.color),
-        'in-item': hostContext('.item', this.el),
+        'in-item': hostContext('ion-item', this.el),
         'range-disabled': this.disabled,
         'range-pressed': this.pressedKnob !== undefined,
         'range-has-pin': this.pin

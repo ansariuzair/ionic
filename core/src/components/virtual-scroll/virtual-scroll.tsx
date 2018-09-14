@@ -272,7 +272,7 @@ export class VirtualScroll {
     }
   }
 
-  private updateCellHeight(cell: Cell, node: HTMLStencilElement) {
+  private updateCellHeight(cell: Cell, node: any) {
     const update = () => {
       if ((node as any)['$ionCell'] === cell) {
         const style = this.win.getComputedStyle(node);
@@ -281,7 +281,6 @@ export class VirtualScroll {
       }
     };
     if (node && node.componentOnReady) {
-      // tslint:disable-next-line:no-floating-promises
       node.componentOnReady().then(update);
     } else {
       update();

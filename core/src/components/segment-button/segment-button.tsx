@@ -57,12 +57,12 @@ export class SegmentButton {
   hostData() {
     const { disabled, checked, color } = this;
     return {
+      'ion-activatable': true,
       class: {
         ...createColorClasses(color),
         'segment-button-disabled': disabled,
         'segment-button-checked': checked,
-      },
-      'ion-activable': true,
+      }
     };
   }
 
@@ -76,7 +76,7 @@ export class SegmentButton {
         onClick={() => this.checked = true}
       >
         <slot></slot>
-        {this.mode === 'md' && <ion-ripple-effect />}
+        {this.mode === 'md' && <ion-ripple-effect></ion-ripple-effect>}
       </button>
     ];
   }

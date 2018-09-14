@@ -22,9 +22,8 @@ export class NavPush {
   push() {
     const nav = this.el.closest('ion-nav');
     const toPush = this.component;
-    if (nav && toPush) {
-      return nav.push(toPush, this.componentProps, { skipIfBusy: true });
+    if (nav && toPush !== undefined) {
+      nav.push(toPush, this.componentProps, { skipIfBusy: true });
     }
-    return Promise.resolve(false);
   }
 }

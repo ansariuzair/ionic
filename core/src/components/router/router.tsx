@@ -66,10 +66,11 @@ export class Router {
     console.debug('[ion-router] found nav');
 
     await this.onRoutesChanged();
+  }
 
+  componentDidLoad() {
     this.win.addEventListener('ionRouteRedirectChanged', debounce(this.onRedirectChanged.bind(this), 10));
     this.win.addEventListener('ionRouteDataChanged', debounce(this.onRoutesChanged.bind(this), 100));
-    this.onRedirectChanged();
   }
 
   @Listen('window:popstate')
@@ -80,7 +81,7 @@ export class Router {
     return this.writeNavStateRoot(path, direction);
   }
 
-  @Listen('window:ionBackButton')
+  @Listen('document:ionBackButton')
   protected onBackButton(ev: BackButtonEvent) {
     ev.detail.register(0, () => this.goBack());
   }
@@ -88,6 +89,9 @@ export class Router {
   /** Navigate to the specified URL */
   @Method()
   push(url: string, direction: RouterDirection = 'forward') {
+    if (url.startsWith('.')) {
+      url = (new URL(url, window.location.href)).pathname;
+    }
     console.debug('[ion-router] URL pushed -> updating nav', url, direction);
 
     const path = parsePath(url);
@@ -142,7 +146,6 @@ export class Router {
   private onRedirectChanged() {
     const path = this.getPath();
     if (path && routeRedirect(path, readRedirects(this.el))) {
-      // tslint:disable-next-line:no-floating-promises
       this.writeNavStateRoot(path, RouterIntent.None);
     }
   }
@@ -219,7 +222,7 @@ export class Router {
     let resolve!: () => void;
     this.waitPromise = new Promise(r => resolve = r);
 
-    if (p) {
+    if (p !== undefined) {
       await p;
     }
     return resolve;
