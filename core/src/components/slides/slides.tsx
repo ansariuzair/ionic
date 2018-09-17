@@ -1,4 +1,4 @@
-import { Component, Element, Event, EventEmitter, Listen, Method, Prop, Watch } from '@stencil/core';
+import { Component, ComponentInterface, Element, Event, EventEmitter, Listen, Method, Prop, Watch } from '@stencil/core';
 
 import { Mode } from '../../interface';
 import { rIC } from '../../utils/helpers.js';
@@ -11,9 +11,10 @@ import { SwiperInterface, SwiperOptions } from './swiper/swiper-interface';
   styleUrls: {
     ios: 'slides.ios.scss',
     md: 'slides.md.scss'
-  }
+  },
+  assetsDir: 'swiper',
 })
-export class Slides {
+export class Slides implements ComponentInterface {
 
   private scrollbarEl?: HTMLElement;
   private paginationEl?: HTMLElement;
@@ -37,10 +38,12 @@ export class Slides {
   @Prop() options: any = {}; // SwiperOptions;  // TODO
 
   @Watch('options')
-  async updateSwiperOptions() {
-    const swiper = await this.getSwiper();
-    swiper.params = this.normalizeOptions();
-    await this.update();
+  async optionsChanged() {
+    if (this.didInit) {
+      const swiper = await this.getSwiper();
+      Object.assign(swiper.params, this.options);
+      await this.update();
+    }
   }
 
   /**
@@ -172,9 +175,9 @@ export class Slides {
    * Transition to the next slide.
    */
   @Method()
-  async slideNext(speed: number, runCallbacks: boolean) {
+  async slideNext(speed?: number, runCallbacks?: boolean) {
     const swiper = await this.getSwiper();
-    swiper.slideNext(speed, runCallbacks);
+    swiper.slideNext(speed!, runCallbacks!);
   }
 
   /**
@@ -287,7 +290,8 @@ export class Slides {
     const finalOptions = this.normalizeOptions();
 
     // init swiper core
-    const { Swiper } = await import('./swiper/swiper');
+    // @ts-ignore
+    const { Swiper } = await import('./swiper/swiper.bundle.js');
     const swiper = new Swiper(this.el, finalOptions);
     this.didInit = true;
     this.readySwiper(swiper);
