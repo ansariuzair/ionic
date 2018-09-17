@@ -1,0 +1,14 @@
+{
+  "id": "4ea632ad",
+  "desc": "toggle, basic",
+  "image": "6b5c53f8c86b5216a5583db2b343a137.png",
+  "device": "iPhone X",
+  "width": 375,
+  "height": 812,
+  "deviceScaleFactor": 3,
+  "physicalWidth": 1125,
+  "physicalHeight": 2436,
+  "hasTouch": true,
+  "isLandscape": false,
+  "isMobile": true
+}

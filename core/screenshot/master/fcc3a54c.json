@@ -1,0 +1,14 @@
+{
+  "id": "fcc3a54c",
+  "desc": "toggle, basic",
+  "image": "ac2eb743bc8556a166ac4dc54a01970c.png",
+  "device": "Pixel 2",
+  "width": 411,
+  "height": 731,
+  "deviceScaleFactor": 2.625,
+  "physicalWidth": 1079,
+  "physicalHeight": 1919,
+  "hasTouch": true,
+  "isLandscape": false,
+  "isMobile": true
+}
