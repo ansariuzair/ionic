@@ -1,0 +1,14 @@
+{
+  "id": "f3ce186b",
+  "image": "a9c1a9b46fe99ec21a215d88a7f83abd.png",
+  "userAgent": "iPhone",
+  "desc": "action-sheet: basic, default",
+  "width": 400,
+  "height": 800,
+  "deviceScaleFactor": 2,
+  "naturalWidth": 800,
+  "naturalHeight": 1600,
+  "hasTouch": true,
+  "isLandscape": false,
+  "isMobile": true
+}

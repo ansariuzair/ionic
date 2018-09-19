@@ -1,0 +1,14 @@
+{
+  "id": "0b5379ae",
+  "image": "1f3892ad1127ff40dfce75ec4c50c422.png",
+  "userAgent": "Android",
+  "desc": "action-sheet: basic, default",
+  "width": 400,
+  "height": 800,
+  "deviceScaleFactor": 2,
+  "naturalWidth": 800,
+  "naturalHeight": 1600,
+  "hasTouch": true,
+  "isLandscape": false,
+  "isMobile": true
+}

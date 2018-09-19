@@ -1,0 +1,14 @@
+{
+  "id": "bb728146",
+  "image": "5afd595adadbf4079f302383c50c6e2f.png",
+  "userAgent": "iPhone",
+  "desc": "action-sheet: basic, alertFromActionSheet, presented",
+  "width": 400,
+  "height": 800,
+  "deviceScaleFactor": 2,
+  "naturalWidth": 800,
+  "naturalHeight": 1600,
+  "hasTouch": true,
+  "isLandscape": false,
+  "isMobile": true
+}

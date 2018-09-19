@@ -1,0 +1,14 @@
+{
+  "id": "a479c113",
+  "image": "53f12bba98fd8f9591e040f6d13dd0a6.png",
+  "userAgent": "iPhone",
+  "desc": "action-sheet: basic, scrollWithoutCancel, presented",
+  "width": 400,
+  "height": 800,
+  "deviceScaleFactor": 2,
+  "naturalWidth": 800,
+  "naturalHeight": 1600,
+  "hasTouch": true,
+  "isLandscape": false,
+  "isMobile": true
+}

@@ -1,0 +1,14 @@
+{
+  "id": "220898ca",
+  "image": "8ec97e11016b7fcad4c3ac0801ba59b8.png",
+  "userAgent": "Android",
+  "desc": "action-sheet: basic, noBackdropDismiss, dismissed",
+  "width": 400,
+  "height": 800,
+  "deviceScaleFactor": 2,
+  "naturalWidth": 800,
+  "naturalHeight": 1600,
+  "hasTouch": true,
+  "isLandscape": false,
+  "isMobile": true
+}
