@@ -1,0 +1,14 @@
+{
+  "id": "c057c88a",
+  "desc": "toggle, basic",
+  "image": "faf61db6e91ed67b382fcdd803dcff96.png",
+  "userAgent": "Android",
+  "width": 400,
+  "height": 800,
+  "deviceScaleFactor": 2,
+  "physicalWidth": 800,
+  "physicalHeight": 1600,
+  "hasTouch": true,
+  "isLandscape": false,
+  "isMobile": true
+}
