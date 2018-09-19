@@ -6,8 +6,8 @@
   "width": 400,
   "height": 800,
   "deviceScaleFactor": 2,
-  "physicalWidth": 800,
-  "physicalHeight": 1600,
+  "naturalWidth": 800,
+  "naturalHeight": 1600,
   "hasTouch": true,
   "isLandscape": false,
   "isMobile": true
