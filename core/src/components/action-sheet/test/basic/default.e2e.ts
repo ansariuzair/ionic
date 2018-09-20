@@ -5,7 +5,7 @@ it('action-sheet: basic, default', async () => {
     url: `/src/components/action-sheet/test/basic?ionic:animate=false`
   });
 
-  let compare = await page.compareScreenshot(`action-sheet: basic, default`);
+  let compare = await page.compareScreenshot();
   expect(compare).toMatchScreenshot();
 
   const presentBtn = await page.find('#basic');
@@ -14,7 +14,7 @@ it('action-sheet: basic, default', async () => {
   let actionSheet = await page.find('ion-action-sheet');
   await actionSheet.waitForVisible();
 
-  compare = await page.compareScreenshot(`action-sheet: basic, default, presented`);
+  compare = await page.compareScreenshot(`presented`);
   expect(compare).toMatchScreenshot();
 
   const backdrop = await page.find('ion-backdrop');
@@ -22,7 +22,7 @@ it('action-sheet: basic, default', async () => {
 
   await actionSheet.waitForNotVisible();
 
-  compare = await page.compareScreenshot(`action-sheet: basic, default, dismissed`);
+  compare = await page.compareScreenshot(`dismissed`);
   expect(compare).toMatchScreenshot();
 
   actionSheet = await page.find('ion-action-sheet');

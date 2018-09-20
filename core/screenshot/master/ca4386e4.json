@@ -1,8 +1,9 @@
 {
-  "id": "75ac8bfa",
+  "id": "ca4386e4",
   "image": "befe95319d497e3cda71193078317ea4.png",
   "userAgent": "Android",
-  "desc": "action-sheet: basic, scrollWithoutCancel, presented",
+  "desc": "action-sheet: basic, scrollWithoutCancel",
+  "testPath": "src/components/action-sheet/test/basic/scroll-without-cancel.e2e.ts",
   "width": 400,
   "height": 800,
   "deviceScaleFactor": 2,

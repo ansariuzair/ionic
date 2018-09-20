@@ -3,6 +3,7 @@
   "image": "39f59dbf05c5c337ddf11d68f624d962.png",
   "userAgent": "iPhone",
   "desc": "action-sheet: basic, default, dismissed",
+  "testPath": "src/components/action-sheet/test/basic/default.e2e.ts",
   "width": 400,
   "height": 800,
   "deviceScaleFactor": 2,

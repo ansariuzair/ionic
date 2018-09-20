@@ -11,6 +11,6 @@ it('action-sheet: basic, scrollWithoutCancel', async () => {
   const actionSheet = await page.find('ion-action-sheet');
   await actionSheet.waitForVisible();
 
-  const compare = await page.compareScreenshot(`action-sheet: basic, scrollWithoutCancel, presented`);
+  const compare = await page.compareScreenshot();
   expect(compare).toMatchScreenshot();
 });

@@ -1,8 +1,9 @@
 {
-  "id": "fd9af1bb",
+  "id": "1efb8ebc",
   "image": "e88d7dbd62a433e0262b312c54fdeced.png",
   "userAgent": "Android",
-  "desc": "action-sheet: basic, alertFromActionSheet, presented",
+  "desc": "action-sheet: basic, alertFromActionSheet",
+  "testPath": "src/components/action-sheet/test/basic/alert-from-action-sheet.e2e.ts",
   "width": 400,
   "height": 800,
   "deviceScaleFactor": 2,

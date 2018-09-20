@@ -3,6 +3,7 @@
   "image": "34f151fbcb355f2c4065a24cc4695758.png",
   "userAgent": "iPhone",
   "desc": "toggle basic",
+  "testPath": "src/components/toggle/test/basic/e2e.ts",
   "width": 400,
   "height": 800,
   "deviceScaleFactor": 2,

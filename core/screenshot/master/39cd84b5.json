@@ -1,8 +1,9 @@
 {
-  "id": "434f5cac",
+  "id": "39cd84b5",
   "image": "5401a61b5841be2655000dc9f4f1e2f9.png",
   "userAgent": "iPhone",
-  "desc": "action-sheet: basic, scrollableOptions, presented",
+  "desc": "action-sheet: basic, scrollableOptions",
+  "testPath": "src/components/action-sheet/test/basic/scrollable-options.e2e.ts",
   "width": 400,
   "height": 800,
   "deviceScaleFactor": 2,

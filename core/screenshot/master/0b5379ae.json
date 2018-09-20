@@ -3,6 +3,7 @@
   "image": "1f3892ad1127ff40dfce75ec4c50c422.png",
   "userAgent": "Android",
   "desc": "action-sheet: basic, default",
+  "testPath": "src/components/action-sheet/test/basic/default.e2e.ts",
   "width": 400,
   "height": 800,
   "deviceScaleFactor": 2,

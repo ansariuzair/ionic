@@ -1,8 +1,9 @@
 {
-  "id": "b8a749dc",
+  "id": "5ad01434",
   "image": "52586f6d54516d4b56acc0ebaffb7acb.png",
   "userAgent": "Android",
-  "desc": "action-sheet: basic, scrollableOptions, presented",
+  "desc": "action-sheet: basic, scrollableOptions",
+  "testPath": "src/components/action-sheet/test/basic/scrollable-options.e2e.ts",
   "width": 400,
   "height": 800,
   "deviceScaleFactor": 2,

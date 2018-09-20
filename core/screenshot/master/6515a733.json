@@ -1,8 +1,9 @@
 {
-  "id": "a479c113",
+  "id": "6515a733",
   "image": "53f12bba98fd8f9591e040f6d13dd0a6.png",
   "userAgent": "iPhone",
-  "desc": "action-sheet: basic, scrollWithoutCancel, presented",
+  "desc": "action-sheet: basic, scrollWithoutCancel",
+  "testPath": "src/components/action-sheet/test/basic/scroll-without-cancel.e2e.ts",
   "width": 400,
   "height": 800,
   "deviceScaleFactor": 2,

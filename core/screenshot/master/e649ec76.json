@@ -3,6 +3,7 @@
   "image": "59ab7faba81ec96ea04cef474cd6d29d.png",
   "userAgent": "iPhone",
   "desc": "action-sheet: basic, noBackdropDismiss, dismissed",
+  "testPath": "src/components/action-sheet/test/basic/no-backdrop-dismiss.e2e.ts",
   "width": 400,
   "height": 800,
   "deviceScaleFactor": 2,

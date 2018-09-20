@@ -11,7 +11,7 @@ it('action-sheet: basic, alertFromActionSheet', async () => {
   const actionSheet = await page.find('ion-action-sheet');
   await actionSheet.waitForVisible();
 
-  let compare = await page.compareScreenshot(`action-sheet: basic, alertFromActionSheet, presented`);
+  let compare = await page.compareScreenshot();
   expect(compare).toMatchScreenshot();
 
   const openAlertBtn = await page.find({ text: 'Open Alert' });
@@ -20,7 +20,7 @@ it('action-sheet: basic, alertFromActionSheet', async () => {
   const alert = await page.find('ion-alert');
   await alert.waitForVisible();
 
-  compare = await page.compareScreenshot(`action-sheet: basic, alertFromActionSheet, alert open`);
+  compare = await page.compareScreenshot(`alert open`);
   expect(compare).toMatchScreenshot();
 
   const alertOkayBtn = await page.find({ contains: 'Okay' });

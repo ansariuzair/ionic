@@ -1,8 +1,9 @@
 {
   "id": "9434cef3",
-  "image": "d6d3f570b6e3e28a03d476fb2b3304fa.png",
+  "image": "61ee0c6920d780f20656050e9ffae45c.png",
   "userAgent": "Android",
   "desc": "action-sheet: basic, default, presented",
+  "testPath": "src/components/action-sheet/test/basic/default.e2e.ts",
   "width": 400,
   "height": 800,
   "deviceScaleFactor": 2,

@@ -1,8 +1,9 @@
 {
-  "id": "6f065651",
-  "image": "a07a3ebff53727f39929c68f330042e0.png",
+  "id": "64485b8d",
+  "image": "9ff004fde626979ceda5dceda620d22c.png",
   "userAgent": "Android",
-  "desc": "action-sheet: basic, noBackdropDismiss, presented",
+  "desc": "action-sheet: basic, cancelOnly",
+  "testPath": "src/components/action-sheet/test/basic/cancel-only.e2e.ts",
   "width": 400,
   "height": 800,
   "deviceScaleFactor": 2,

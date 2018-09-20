@@ -3,6 +3,7 @@
   "image": "decdfb11d00721b1f32c9a03f41559de.png",
   "userAgent": "Android",
   "desc": "toggle basic",
+  "testPath": "src/components/toggle/test/basic/e2e.ts",
   "width": 400,
   "height": 800,
   "deviceScaleFactor": 2,

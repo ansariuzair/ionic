@@ -3,6 +3,7 @@
   "image": "080b190e71c0cd5417b1f1ea88d9c254.png",
   "userAgent": "Android",
   "desc": "action-sheet: basic, alertFromActionSheet, alert open",
+  "testPath": "src/components/action-sheet/test/basic/alert-from-action-sheet.e2e.ts",
   "width": 400,
   "height": 800,
   "deviceScaleFactor": 2,

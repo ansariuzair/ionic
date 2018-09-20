@@ -5,6 +5,6 @@ it('toggle basic', async () => {
     url: `/src/components/toggle/test/basic`
   });
 
-  const compare = await page.compareScreenshot(`toggle basic`);
+  const compare = await page.compareScreenshot();
   expect(compare).toMatchScreenshot();
 });

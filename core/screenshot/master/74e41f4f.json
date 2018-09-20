@@ -1,8 +1,9 @@
 {
-  "id": "bb728146",
+  "id": "74e41f4f",
   "image": "5afd595adadbf4079f302383c50c6e2f.png",
   "userAgent": "iPhone",
-  "desc": "action-sheet: basic, alertFromActionSheet, presented",
+  "desc": "action-sheet: basic, alertFromActionSheet",
+  "testPath": "src/components/action-sheet/test/basic/alert-from-action-sheet.e2e.ts",
   "width": 400,
   "height": 800,
   "deviceScaleFactor": 2,

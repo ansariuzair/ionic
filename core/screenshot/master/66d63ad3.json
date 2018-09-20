@@ -1,8 +1,9 @@
 {
-  "id": "fd494e57",
-  "image": "59ab7faba81ec96ea04cef474cd6d29d.png",
+  "id": "66d63ad3",
+  "image": "05e56a27f743e073af094c283450f304.png",
   "userAgent": "iPhone",
-  "desc": "action-sheet: basic, noBackdropDismiss, presented",
+  "desc": "action-sheet: basic, cancelOnly",
+  "testPath": "src/components/action-sheet/test/basic/cancel-only.e2e.ts",
   "width": 400,
   "height": 800,
   "deviceScaleFactor": 2,

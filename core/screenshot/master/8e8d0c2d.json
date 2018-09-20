@@ -1,8 +1,8 @@
 {
-  "id": "220898ca",
-  "image": "8ec97e11016b7fcad4c3ac0801ba59b8.png",
-  "userAgent": "Android",
-  "desc": "action-sheet: basic, noBackdropDismiss, dismissed",
+  "id": "8e8d0c2d",
+  "image": "59ab7faba81ec96ea04cef474cd6d29d.png",
+  "userAgent": "iPhone",
+  "desc": "action-sheet: basic, noBackdropDismiss",
   "testPath": "src/components/action-sheet/test/basic/no-backdrop-dismiss.e2e.ts",
   "width": 400,
   "height": 800,
